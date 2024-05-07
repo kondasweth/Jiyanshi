@@ -1,6 +1,7 @@
-##histogram
+## histogram
 
 1.install following packages
+
 ```numpy, opencv, matplootlib```
 
 2.code
