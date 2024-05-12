@@ -23,16 +23,38 @@ for i,col in enumerate(color):
  plt.xlim([0,256])
 plt.show()
 ```
-## lucky
-```
+## Bounding Box
+1.Title:Draw bounding boxes for images.
+
+2.Installation
+pip install pillow
+
+3.Libraries
+  os: for interacting with the operating system.
+  csv: for reading CSV files.
+  PIL: Python Imaging Library, for handling images.
+  argparse: for parsing command-line arguments.
+
+4.  
+
+
+
+
+
+Example:
 import os
 import csv
 from PIL import Image, ImageDraw
+import argparse
 
-
-csv_file = "/home/swetha-konda/Downloads/7622202030987_bounding_box.csv"
-image_dir = "/home/swetha-konda/Downloads/7622202030987"
-output_dir = "/home/swetha-konda/Downloads/7622202030987_with_boxes"
+parser = argparse.ArgumentParser()
+parser.add_argument("image_path", help = "Enter the path of the image")
+parser.add_argument("csv", help = "your csv file path, which has bounding box values")
+parser.add_argument("out_dir", help = "name of the output directory where you want to save your output")
+args = parser.parse_args()
+image_dir = args.image_path
+csv_file = args.csv
+output_dir = args.out_dir
 
 
 os.makedirs(output_dir, exist_ok=True)
@@ -63,6 +85,8 @@ def crop_image(image, boxes):
 
 with open(csv_file, 'r') as file:
     csv_reader = csv.DictReader(file)
+    print(csv_reader)
+
     for row in csv_reader:
         image_name = row['filename']
         image_path = os.path.join(image_dir, image_name)
@@ -71,10 +95,27 @@ with open(csv_file, 'r') as file:
         boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
         cropped_images = crop_image(image, boxes)
         for i, cropped_img in enumerate(cropped_images):
-            cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
+           cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
         full_image_with_boxes = draw_boxes(image, boxes)
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## no
 ```
