@@ -190,11 +190,14 @@ This script essentially processes images and bounding box data from a CSV file, 
 
 7.output:
 input:
-/home/swetha-konda/Downloads/7622202030987/7622202030987_f306535d741c9148dc458acbbc887243_L_487.png
+![image](https://github.com/kondasweth/Jiyanshi/assets/169050846/e02aa1b8-7227-4f8f-a538-3bc847177b7b)
+
 output 1:
-/home/swetha-konda/Downloads/7622202030987_cartzy/0_7622202030987_f306535d741c9148dc458acbbc887243_L_487.png
+![image](https://github.com/kondasweth/Jiyanshi/assets/169050846/08564941-15b3-48f4-9032-c78631fe3f0c)
+
 output 2:
-/home/swetha-konda/Downloads/7622202030987_cartzy/full_7622202030987_f306535d741c9148dc458acbbc887243_L_487.png
+![image](https://github.com/kondasweth/Jiyanshi/assets/169050846/821273b1-f771-45cb-b3a9-4b421ac09551)
+
 
 ## number
 1.Example:
