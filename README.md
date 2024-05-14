@@ -200,7 +200,9 @@ output 2:
 
 
 ## number
-1.Example:
+1.Title:iteration (this will be explain each iteration,print the sum of the current and previous numbers)
+
+2.Example:
 import argparse
 parser = argparse.ArgumentParser(description='process some integers')
 
@@ -215,7 +217,38 @@ for i in range(10):
     print(f'Current number {i} Previous Number {previous_num} is {sum}')
     previous_num = i
 
-2.Output
+3.Importing Libraries:
+import argparse
+This line imports the `argparse` module, which provides a means for parsing arguments from the command line.  
+
+4.Explaination:
+Creating Argument Parser:
+parser = argparse.ArgumentParser(description='process some integers')
+Here, an `ArgumentParser` object named `parser` is created. It sets a description for the program.
+
+Defining Command-Line Arguments:
+parser.add_argument('current_number', type=int)
+parser.add_argument('previous_number', type=int)
+This code adds two positional arguments to the parser: current_number and `previous_number`, both of type integer.
+
+Parsing Command-Line Arguments:
+args = parser.parse_args()
+This line parses the command-line arguments provided by the user based on the defined argument structure.
+
+Accessing Parsed Arguments:
+current_num = args.current_number
+previous_num = args.previous_number
+It assigns the parsed values of `current_number` and `previous_number` to variables `current_num` and `previous_num`, respectively.
+
+Looping and Calculation:
+    for i in range(10):
+        sum = previous_num + i
+        print(f'Current number {i} Previous Number {previous_num} is {sum}')
+        previous_num = i
+Inside the loop, it iterates over the range from 0 to 9. For each iteration, it calculates the sum of previous_num and the current index `i`, then prints the result along with i and `previous_num`. After printing, it updates `previous_num` with the current value of `i`.
+However, there's a logical issue in this code: `previous_num` is being overwritten in each iteration of the loop with the value of `i`, which will cause unexpected behavior. It seems like it should be set to `current_num` instead.
+
+5.Output
 Current number 0 Previous Number 1 is 1
 
 Current number 1 Previous Number 0 is 1
@@ -235,6 +268,8 @@ Current number 7 Previous Number 6 is 13
 Current number 8 Previous Number 7 is 15
 
 Current number 9 Previous Number 8 is 17
+
+
 
     
 
@@ -263,36 +298,6 @@ Current number 9 Previous Number 8 is 17
 
 
 
-
-## web
-```
-
-import cv2 as cv
-cam = cv.VideoCapture(0)
-cc = cv.VideoWriter_fourcc(*'XVID')
-file = cv.VideoWriter('output.avi', cc, 15.0, (640, 480))
-if not cam.isOpened():
-   print("error opening camera")
-   exit()
-while True:
-   # Capture frame-by-frame
-   ret, frame = cam.read()
-   # if frame is read correctly ret is True
-   if not ret:
-      print("error in retrieving frame")
-      break
-   img = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
-   cv.imshow('frame', img)
-   file.write(img)
-
-   
-   if cv.waitKey(1) == ord('q'):
-      break
-
-cam.release()
-file.release()
-cv.destroyAllWindows()
-```
 
 
 
