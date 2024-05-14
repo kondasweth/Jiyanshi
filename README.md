@@ -212,6 +212,29 @@ for i in range(10):
     print(f'Current number {i} Previous Number {previous_num} is {sum}')
     previous_num = i
 
+2.Output
+Current number 0 Previous Number 1 is 1
+
+Current number 1 Previous Number 0 is 1
+
+Current number 2 Previous Number 1 is 3
+
+Current number 3 Previous Number 2 is 5
+
+Current number 4 Previous Number 3 is 7
+
+Current number 5 Previous Number 4 is 9
+
+Current number 6 Previous Number 5 is 11
+
+Current number 7 Previous Number 6 is 13
+
+Current number 8 Previous Number 7 is 15
+
+Current number 9 Previous Number 8 is 17
+
+    
+
 
 
 
