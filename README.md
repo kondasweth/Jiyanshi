@@ -267,7 +267,7 @@ Current number 7 Previous Number 6 is 13
 
 Current number 8 Previous Number 7 is 15
 
-Current number 9 Previous Number 8 is 17
+Current number 9 Previous Number 8 is 17 
 
 
 
